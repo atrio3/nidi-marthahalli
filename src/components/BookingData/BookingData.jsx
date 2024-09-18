@@ -24,7 +24,7 @@ const BookingData = () => {
         const ids = [];
         snapshot.forEach((childSnapshot) => {
           const userDetails = childSnapshot.val();
-          if (userDetails.userLocation === "MARTHAHALLI") {
+          if (userDetails.userLocation === "NITTE") {
             ids.push(childSnapshot.key);
           }
         });
@@ -44,7 +44,7 @@ const BookingData = () => {
           if (data) {
             const userDetailsArray = Object.values(data.UserDetails || {});
             const filteredData = userDetailsArray.filter(
-              (item) => item.userLocation === "MARTHAHALLI"
+              (item) => item.userLocation === "NITTE"
             );
             setTableData(filteredData);
             setFilteredData(filteredData);
@@ -147,7 +147,7 @@ const BookingData = () => {
       }));
       setRequiredData(data);
       const indexInQuantity = data.location.findIndex(
-        (item) => item === "MARTHAHALLI"
+        (item) => item === "NITTE"
       );
       setNewQuantity(data.quantity[indexInQuantity] + 1);
     }
@@ -165,7 +165,7 @@ const BookingData = () => {
       return;
     }
     const updatedQuantities = [...data.quantity];
-    const index = data.location.findIndex((item) => item === "MARTHAHALLI");
+    const index = data.location.findIndex((item) => item === "NITTE");
     updatedQuantities[index] = newQuantity;
 
     const docRef = doc(db, "vehicleQuantityList", data.id);
@@ -256,7 +256,7 @@ const BookingData = () => {
 
   return (
     <div className="booking-data-container">
-      <h2 className="booking-data-title">MARTHAHALLI Bookings:</h2>
+      <h2 className="booking-data-title">NITTE Bookings:</h2>
       <div className="search-export-container">
         <div className="search-container">
           <input

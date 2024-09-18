@@ -29,11 +29,11 @@ const VehicleList = () => {
     fetchData();
   }, []);
 
-  const filteredVehicles = vehicles.filter(vehicle => Array.isArray(vehicle.location) && vehicle.location.includes("MARTHAHALLI"));
+  const filteredVehicles = vehicles.filter(vehicle => Array.isArray(vehicle.location) && vehicle.location.includes("NITTE"));
 
   const quantity = filteredVehicles.map(vehicle =>
-    vehicle.location.findIndex(location => location === "MARTHAHALLI") !== -1 ?
-      vehicle.quantity[vehicle.location.findIndex(location => location === "MARTHAHALLI")] :
+    vehicle.location.findIndex(location => location === "NITTE") !== -1 ?
+      vehicle.quantity[vehicle.location.findIndex(location => location === "NITTE")] :
       ""
   );
 
@@ -44,7 +44,7 @@ const VehicleList = () => {
           <TableHead style={{ backgroundColor: "#f2f2f2" }}>
             <TableRow>
               <TableCell colSpan={2} align="center" style={{ fontWeight: "bold" }}>
-                MARTHAHALLI
+                NITTE
               </TableCell>
             </TableRow>
             <TableRow>
